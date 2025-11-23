@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recomendaciones · Conectados por la Fe</title>
+    <title>Creativos – Conectados por la Fe</title>
 
     <style>
         body {
@@ -16,12 +16,9 @@
             transition: opacity 0.8s ease-in-out;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        a { color: inherit; text-decoration: none; }
 
-        /* NAVBAR */
+        /* NAVBAR (idéntico al de las otras páginas) */
         .navbar {
             position: fixed;
             top: 0;
@@ -47,30 +44,23 @@
             color: #d9b657;
         }
 
-        nav {
-            margin-right: 110px;
-        }
-
+        nav { margin-right: 110px; }
         nav a {
             margin-left: 18px;
             font-weight: 500;
             transition: 0.3s;
         }
+        nav a:hover { color: #d9b657; }
 
-        nav a:hover {
-            color: #d9b657;
-        }
-
-        /* CONTENIDO */
-        .content-section {
-            margin-top: 130px;
+        /* CONTENEDOR GENERAL */
+        .section-container {
+            margin-top: 140px;
             padding: 40px 10%;
             opacity: 0;
             transform: translateY(30px);
             transition: 1s ease;
         }
-
-        .content-section.visible {
+        .section-container.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -78,7 +68,7 @@
         h1 {
             color: #f6d97e;
             font-size: 38px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         p {
@@ -88,48 +78,61 @@
         }
 
         /* TARJETAS */
-        .cards-container {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        .cards {
+            display: flex;
             gap: 30px;
+            margin-top: 40px;
         }
 
         .card {
-            background: #11172f;
-            border: 1px solid #c9a94e50;
-            padding: 25px;
+            background: #151a33;
+            border: 1px solid #c9a94e40;
             border-radius: 12px;
+            padding: 20px;
+            width: 33%;
+            text-align: center;
             box-shadow: 0 0 12px #0006;
-            transition: 0.4s;
+            transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 18px #0009;
-            border-color: #d9b657;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #0008;
         }
 
         .card img {
-            width: 65px;
-            height: 65px;
-            border-radius: 8px;
+            width: 85%;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        .card h3 {
-            margin: 0;
-            color: #f6d97e;
-            margin-bottom: 12px;
-            font-size: 22px;
+        /* BOTÓN FORMULARIO */
+        .form-box {
+            margin-top: 50px;
+            text-align: center;
+            padding: 25px;
+            border: 1px solid #c9a94e40;
+            border-radius: 10px;
+            background: #151a33;
         }
 
+        .form-box a {
+            display: inline-block;
+            background: #d9b657;
+            padding: 12px 25px;
+            color: #000;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
         .footer {
             text-align: center;
             padding: 25px;
             border-top: 1px solid #c9a94e50;
-            margin-top: 40px;
             color: #ffffffa9;
+            margin-top: 60px;
         }
 
         /* TRANSICIÓN ENTRE PÁGINAS */
@@ -159,7 +162,6 @@
     <!-- NAVBAR -->
     <header class="navbar" id="navbar">
         <h2 class="logo">Conectados por la Fe</h2>
-
         <nav>
             <a href="index.html" class="link">Inicio</a>
             <a href="editorial.html" class="link">Editorial</a>
@@ -172,49 +174,54 @@
         </nav>
     </header>
 
-    <!-- CONTENIDO -->
-    <section class="content-section" id="contentSection">
-        <h1>Recomendaciones para un Buen Uso de las Redes</h1>
-
+    <!-- SECCIÓN 7: CREATIVOS -->
+    <section class="section-container" id="creativos">
+        <h1>Creativos</h1>
         <p>
-            Estas recomendaciones buscan ayudarte a utilizar las redes sociales de manera responsable, humana y cristiana.
-            Nuestro objetivo es que tu presencia digital refleje amor, respeto y verdad, convirtiéndote en un buen ejemplo
-            para los demás.
+            Aquí presentamos una mirada visual que busca transmitir lo que significa vivir la fe en el mundo digital.
+            Cada imagen simboliza un aspecto esencial de nuestro llamado como cristianos conectados.
         </p>
 
-        <div class="cards-container">
-
-            <!-- TARJETA 1 -->
+        <div class="cards">
             <div class="card">
-                <img src="imnn1.png" alt="icono">
-                <h3>Publica con Respeto</h3>
-                <p>
-                    Antes de comentar o publicar, piensa si tus palabras construyen o destruyen.  
-                    Evita insultos, peleas y sarcasmos que hieren.
-                </p>
+                <img src="imnn1.png">
+                <p><strong>La Palabra en lo digital:</strong> Recordar que cada publicación puede ser un acto de evangelización.</p>
             </div>
 
-            <!-- TARJETA 2 -->
             <div class="card">
-                <img src="imnn2.png" alt="icono">
-                <h3>Comparte Luz, No Oscuridad</h3>
-                <p>
-                    Difunde contenido positivo, esperanzador y útil.  
-                    No compartas noticias falsas, chismes o contenido que humille.
-                </p>
+                <img src="imnn2.png">
+                <p><strong>Comunidad auténtica:</strong> Relacionarnos con otros desde la verdad, el respeto y la fraternidad.</p>
             </div>
 
-            <!-- TARJETA 3 -->
             <div class="card">
-                <img src="imnn3.png" alt="icono">
-                <h3>Evangeliza con tu Ejemplo</h3>
-                <p>
-                    Tus redes son una oportunidad para mostrar tu fe con sencillez.  
-                    No se trata de imponer, sino de inspirar y acompañar.
-                </p>
+                <img src="imnn3.png">
+                <p><strong>Caridad en línea:</strong> Crear espacios donde reine el amor, la paz y el apoyo mutuo.</p>
             </div>
-
         </div>
+
+        <!-- FORMULARIO -->
+        <div class="form-box">
+            <h2 style="color:#f6d97e;">Danos tu opinión</h2>
+            <p>Queremos conocer tu experiencia, tus ideas y tu reflexión final sobre este proyecto.</p>
+
+            <a href="AQUI_TU_LINK_DE_FORMULARIO" target="_blank">
+                Ir al formulario
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 8–9 -->
+    <section class="section-container" id="final">
+        <h1>Conclusión Final</h1>
+        <p>
+            En un mundo cada vez más digital, los cristianos estamos llamados a ser luz incluso detrás de una pantalla.
+            Que todo lo que compartamos sea un reflejo del amor de Dios.
+        </p>
+
+        <p>
+            Gracias por ser parte de este proyecto y por aportar con tus ideas. Que este espacio siga inspirando una cultura
+            digital de fraternidad, respeto y verdad.
+        </p>
     </section>
 
     <footer class="footer">
@@ -223,9 +230,7 @@
 
     <script>
         /* Fade-in inicial */
-        window.onload = () => {
-            document.body.style.opacity = "1";
-        };
+        window.onload = () => { document.body.style.opacity = "1"; };
 
         /* Navbar en scroll */
         window.addEventListener("scroll", () => {
@@ -234,16 +239,13 @@
             else nav.classList.remove("scrolled");
         });
 
-        /* Animación de aparición */
-        const section = document.getElementById("contentSection");
-        const obs = new IntersectionObserver(
-            entries => {
-                if (entries[0].isIntersecting)
-                    section.classList.add("visible");
-            },
-            { threshold: 0.3 }
-        );
-        obs.observe(section);
+        /* Aparición animada */
+        const sections = document.querySelectorAll(".section-container");
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+        }, { threshold: 0.3 });
+
+        sections.forEach(s => obs.observe(s));
 
         /* Transición entre páginas */
         const links = document.querySelectorAll(".link");
@@ -252,13 +254,8 @@
         links.forEach(link => {
             link.addEventListener("click", e => {
                 e.preventDefault();
-                const href = link.getAttribute("href");
-
                 transition.classList.add("active");
-
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 600);
+                setTimeout(() => { window.location.href = link.href; }, 600);
             });
         });
     </script>
