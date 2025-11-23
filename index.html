@@ -6,7 +6,6 @@
     <title>Redes con Sentido — Evangelizando en el Mundo Digital</title>
 
     <style>
-        /* ----------- ESTILOS GENERALES ----------- */
         body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
@@ -22,7 +21,7 @@
             text-decoration: none;
         }
 
-        /* ----------- NAVBAR ----------- */
+        /* -------- NAVBAR -------- */
         .navbar {
             position: fixed;
             top: 0;
@@ -52,13 +51,14 @@
             margin-left: 18px;
             font-weight: 500;
             transition: 0.3s;
+            font-size: 15px; /* ⭐ hace que Créditos se vea bien */
         }
 
         nav a:hover {
             color: #d9b657;
         }
 
-        /* ----------- HERO (BANNER) ----------- */
+        /* -------- HERO -------- */
         .hero {
             position: relative;
             height: 100vh;
@@ -113,10 +113,12 @@
             transform: scale(1.05);
         }
 
-        /* ----------- INTRO ----------- */
+        /* -------- INTRO (YA ARREGLADO) -------- */
         .intro {
-            padding: 80px 15%;
-            text-align: center;
+            padding: 80px 0;
+            max-width: 900px;
+            margin: 0 auto;         /* bloque centrado */
+            text-align: left;       /* texto recto */
             opacity: 0;
             transform: translateY(30px);
             transition: 1s ease;
@@ -130,15 +132,17 @@
         .intro h2 {
             color: #f6d97e;
             font-size: 32px;
+            text-align: center;     /* título centrado */
         }
 
         .intro p {
             font-size: 18px;
             line-height: 1.7;
             color: #d8d8d8;
+            text-align: left;       /* línea recta */
         }
 
-        /* ----------- FOOTER ----------- */
+        /* -------- FOOTER -------- */
         .footer {
             text-align: center;
             padding: 25px;
@@ -147,7 +151,7 @@
             color: #ffffffa9;
         }
 
-        /* ----------- ANIMACIONES ----------- */
+        /* -------- ANIMACIONES -------- */
         @keyframes fadeUp {
             from {
                 transform: translate(-50%, -55%);
@@ -233,14 +237,14 @@
             document.body.style.opacity = "1";
         };
 
-        /* ---- Navbar cambia al hacer scroll ---- */
+        /* ---- Navbar scroll ---- */
         window.addEventListener("scroll", () => {
             const nav = document.getElementById("navbar");
             if (window.scrollY > 50) nav.classList.add("scrolled");
             else nav.classList.remove("scrolled");
         });
 
-        /* ---- Fade-in en scroll ---- */
+        /* ---- Animación intro ---- */
         const intro = document.getElementById("intro");
         const observer = new IntersectionObserver(
             entries => {
@@ -250,7 +254,7 @@
         );
         observer.observe(intro);
 
-        /* ---- Parallax del banner ---- */
+        /* ---- Parallax ---- */
         document.addEventListener("mousemove", (e) => {
             const img = document.getElementById("heroImg");
             let moveX = (e.clientX - window.innerWidth / 2) * 0.003;
@@ -258,7 +262,7 @@
             img.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
         });
 
-        /* ---- Transición entre páginas ---- */
+        /* ---- Transiciones ---- */
         const links = document.querySelectorAll(".link");
         const transition = document.getElementById("transition");
 
