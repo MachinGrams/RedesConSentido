@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artículo Principal - Conectados por la Fe</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #0d1224;
+            color: #ffffff;
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 8, 25, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            border-bottom: 1px solid #c9a94e50;
+            transition: background 0.4s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(5, 8, 25, 0.92);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #d9b657;
+        }
+
+        nav {
+            margin-right: 110px;
+        }
+
+        nav a {
+            margin-left: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9b657;
+        }
+
+        /* CONTENIDO */
+        .article-container {
+            margin-top: 120px;
+            padding: 40px 10%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease;
+        }
+
+        .article-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .article-text h1 {
+            color: #f6d97e;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .idea-block {
+            margin-top: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ffffff22;
+        }
+
+        .idea-block h2 {
+            color: #d9b657;
+            font-size: 26px;
+        }
+
+        .idea-block p {
+            font-size: 19px;
+            color: #e0e0e0;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .image-space {
+            width: 100%;
+            height: 240px;
+            background: #ffffff0f;
+            border: 1px dashed #d9b65788;
+            border-radius: 10px;
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d9b657aa;
+            font-size: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #c9a94e50;
+            margin-top: 40px;
+            color: #ffffffa9;
+        }
+
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease-out;
+            z-index: 1000;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition" id="transition"></div>
+
+    <!-- NAV -->
+    <header class="navbar" id="navbar">
+        <h2 class="logo">Conectados por la Fe</h2>
+
+        <nav>
+            <a href="index.html" class="link">Inicio</a>
+            <a href="editorial.html" class="link">Editorial</a>
+            <a href="articulo.html" class="link">Artículo Principal</a>
+            <a href="opiniones.html" class="link">Opiniones</a>
+            <a href="magisterio.html" class="link">Magisterio</a>
+            <a href="recomendaciones.html" class="link">Recomendaciones</a>
+            <a href="creativos.html" class="link">Creativos</a>
+            <a href="creditos.html" class="link">Créditos</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="article-container" id="articleSection">
+
+        <div class="article-text">
+            <h1>El Buen Uso de las Redes Sociales desde la Fe</h1>
+
+            <!-- IDEA 1 -->
+            <div class="idea-block">
+                <h2>1. Las redes sociales como puentes, no muros</h2>
+                <p>
+                    El cristiano está llamado a construir unión incluso en los espacios digitales. 
+                    En un mundo lleno de debates agresivos, nuestras palabras pueden ser caminos de encuentro 
+                    y reconciliación.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 2 -->
+            <div class="idea-block">
+                <h2>2. Discernimiento digital</h2>
+                <p>
+                    No todo lo que vemos edifica. Antes de compartir o consumir contenido, la pregunta cristiana es:
+                    “¿Esto me ayuda a crecer? ¿Refleja lo que Dios quiere para mí?”.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 3 -->
+            <div class="idea-block">
+                <h2>3. Cristo también habita en lo digital</h2>
+                <p>
+                    Dios puede tocar el corazón a través de una publicación, un mensaje o una historia.
+                    La fe no se desconecta cuando encendemos el móvil: se expresa también allí.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 4 -->
+            <div class="idea-block">
+                <h2>4. Ser paz en medio del ruido</h2>
+                <p>
+                    Entre insultos, polémicas y odio, el cristiano es llamado a responder con serenidad,
+                    empatía y respeto. La paz empieza en un comentario.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 5 -->
+            <div class="idea-block">
+                <h2>5. Testimonio antes que contenido</h2>
+                <p>
+                    No se trata solo de publicar frases religiosas, sino de vivir coherentemente la fe.
+                    Lo que subimos debe reflejar lo que somos.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 6 -->
+            <div class="idea-block">
+                <h2>6. Evitar comparaciones y apariencias</h2>
+                <p>
+                    Las redes pueden generar presión por “verse perfecto”. El Evangelio invita a ser auténticos,
+                    no a vivir de la aprobación digital.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 7 -->
+            <div class="idea-block">
+                <h2>7. Cuidar la privacidad y el respeto</h2>
+                <p>
+                    Un cristiano no expone ni humilla a otros. Comparte con responsabilidad, protege la intimidad
+                    y piensa antes de publicar.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 8 -->
+            <div class="idea-block">
+                <h2>8. Ver la dignidad detrás de cada perfil</h2>
+                <p>
+                    Cada usuario es una persona con una historia. Reconocer esto cambia la forma en que respondemos,
+                    corregimos o discutimos.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 9 -->
+            <div class="idea-block">
+                <h2>9. Contenido que construye</h2>
+                <p>
+                    Ser cristiano también es promover lo bueno: educación, solidaridad, creatividad, esperanza.
+                    No todo debe ser explícitamente religioso para ser evangelizador.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+            <!-- IDEA 10 -->
+            <div class="idea-block">
+                <h2>10. Reconocer y denunciar el mal uso digital</h2>
+                <p>
+                    La fe exige responsabilidad. Identificar el ciberacoso, la manipulación, la desinformación 
+                    o contenidos dañinos es parte del compromiso cristiano en Internet.
+                </p>
+
+                <div class="image-space">AQUÍ VA UNA IMAGEN</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        Proyecto Escolar · Área de Educación Religiosa · 2025
+    </footer>
+
+    <script>
+        /* Fade-in inicial */
+        window.onload = () => {
+            document.body.style.opacity = "1";
+        };
+
+        /* Navbar scroll */
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementById("navbar");
+            if (window.scrollY > 50) nav.classList.add("scrolled");
+            else nav.classList.remove("scrolled");
+        });
+
+        /* Animación de aparición */
+        const articleSec = document.getElementById("articleSection");
+        const obs = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting)
+                articleSec.classList.add("visible");
+        }, { threshold: 0.3 });
+
+        obs.observe(articleSec);
+
+        /* Transición entre páginas */
+        const links = document.querySelectorAll(".link");
+        const transition = document.getElementById("transition");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const href = link.getAttribute("href");
+
+                transition.classList.add("active");
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        });
+    </script>
+
+</body>
+</html>
