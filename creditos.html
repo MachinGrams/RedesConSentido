@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflexión Final</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #0d1224;
+            color: #ffffff;
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 8, 25, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            border-bottom: 1px solid #c9a94e50;
+            transition: background 0.4s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(5, 8, 25, 0.92);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #d9b657;
+        }
+
+        nav {
+            margin-right: 110px;
+        }
+
+        nav a {
+            margin-left: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9b657;
+        }
+
+        /* CONTENIDO */
+        .content-section {
+            margin-top: 150px;
+            padding: 40px 10%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s ease;
+        }
+
+        .content-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            color: #f6d97e;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 22px;
+        }
+
+        .big-image {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #000c;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #c9a94e50;
+            margin-top: 40px;
+            color: #ffffffa9;
+        }
+
+        /* TRANSICIÓN ENTRE PÁGINAS */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease-out;
+            z-index: 1000;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition" id="transition"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <h2 class="logo">Conectados por la Fe</h2>
+
+        <nav>
+            <a href="index.html" class="link">Inicio</a>
+            <a href="editorial.html" class="link">Editorial</a>
+            <a href="articulo.html" class="link">Artículo Principal</a>
+            <a href="opiniones.html" class="link">Opiniones</a>
+            <a href="magisterio.html" class="link">Magisterio</a>
+            <a href="recomendaciones.html" class="link">Recomendaciones</a>
+            <a href="creativos.html" class="link">Creativos</a>
+            <a href="creditos.html" class="link">Créditos</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="content-section" id="content">
+        <h1>Reflexión Final y Compromiso Cristiano</h1>
+
+        <p>
+            Las redes sociales son un espacio donde podemos construir o destruir. Cada palabra, cada imagen y cada mensaje deja una huella.
+            Por eso, como cristianos, estamos llamados a iluminar incluso estos ambientes digitales con la verdad, la esperanza y la caridad.
+        </p>
+
+        <p>
+            Recordemos lo que nos invita la Iglesia en documentos como <i>Christus Vivit</i> y <i>Fratelli Tutti</i>: ser puentes, no muros;
+            acercar, no dividir; sanar, no herir. La comunicación es un don, pero también una responsabilidad.
+        </p>
+
+        <p>
+            Usar bien las redes significa reconocer la dignidad del otro, evitar la agresión, buscar el diálogo y promover un mensaje que edifique.
+            No se trata solo de evitar el mal, sino de comprometerse activamente con el bien.
+        </p>
+
+        <p>
+            Tú puedes ser un influencer del Evangelio: alguien que comparte luz, que anima, que respeta, que escucha, que inspira, que construye.
+            No hace falta un millón de seguidores para hacerlo: basta un corazón dispuesto.
+        </p>
+
+        <!-- IMAGEN GRANDE -->
+        <img src="asddd.png" class="big-image">
+    </section>
+
+    <footer class="footer">
+        Proyecto Escolar · Área de Educación Religiosa · 2025
+    </footer>
+
+    <script>
+        /* Fade-in inicial */
+        window.onload = () => {
+            document.body.style.opacity = "1";
+        };
+
+        /* Navbar scroll */
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementById("navbar");
+            if (window.scrollY > 50) nav.classList.add("scrolled");
+            else nav.classList.remove("scrolled");
+        });
+
+        /* Animación al aparecer */
+        const content = document.getElementById("content");
+        const obs = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting)
+                    content.classList.add("visible");
+            },
+            { threshold: 0.3 }
+        );
+        obs.observe(content);
+
+        /* Transición entre páginas */
+        const links = document.querySelectorAll(".link");
+        const transition = document.getElementById("transition");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const href = link.getAttribute("href");
+
+                transition.classList.add("active");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>
