@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magisterio · Conectados por la Fe</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #0d1224;
+            color: #ffffff;
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 8, 25, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            border-bottom: 1px solid #c9a94e50;
+            transition: background 0.4s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(5, 8, 25, 0.92);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #d9b657;
+        }
+
+        nav {
+            margin-right: 110px;
+        }
+
+        nav a {
+            margin-left: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9b657;
+        }
+
+        /* CONTENIDO */
+        .content-section {
+            margin-top: 130px;
+            padding: 40px 10%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease;
+        }
+
+        .content-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            color: #f6d97e;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #e0e0e0;
+        }
+
+        /* TARJETAS */
+        .cards-container {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #11172d;
+            border: 1px solid #c9a94e50;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 12px #0007;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px #0007;
+        }
+
+        .card h3 {
+            color: #f6d97e;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 17px;
+            color: #dedede;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #c9a94e50;
+            margin-top: 40px;
+            color: #ffffffa9;
+        }
+
+        /* TRANSICIÓN ENTRE PÁGINAS */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease-out;
+            z-index: 1000;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-transition" id="transition"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <h2 class="logo">Conectados por la Fe</h2>
+
+        <nav>
+            <a href="index.html" class="link">Inicio</a>
+            <a href="editorial.html" class="link">Editorial</a>
+            <a href="articulo.html" class="link">Artículo Principal</a>
+            <a href="opiniones.html" class="link">Opiniones</a>
+            <a href="magisterio.html" class="link">Magisterio</a>
+            <a href="recomendaciones.html" class="link">Recomendaciones</a>
+            <a href="creativos.html" class="link">Creativos</a>
+            <a href="creditos.html" class="link">Créditos</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <section class="content-section" id="contentSection">
+        <h1>Enseñanza del Magisterio</h1>
+
+        <p>
+            El Magisterio de la Iglesia nos recuerda que el mundo digital es también un espacio donde debemos 
+            vivir el Evangelio. A través de distintos documentos, el Papa Francisco nos anima a usar las redes 
+            sociales para construir puentes, buscar la verdad y promover la dignidad humana.
+        </p>
+
+        <div class="cards-container">
+
+            <!-- TARJETA 1 -->
+            <div class="card">
+                <img src="img1.png" alt="Imagen Christus Vivit">
+                <h3>Christus Vivit</h3>
+                <p>
+                    “Los jóvenes no son el futuro, son el ahora de Dios”.  
+                    Este documento invita a los jóvenes a ser luz en el mundo digital, usando sus redes para 
+                    anunciar esperanza y acompañar a otros.
+                </p>
+            </div>
+
+            <!-- TARJETA 2 -->
+            <div class="card">
+                <img src="img2.png" alt="Imagen Fratelli Tutti">
+                <h3>Fratelli Tutti</h3>
+                <p>
+                    “La agresividad social encuentra en los dispositivos móviles un espacio de ampliación”.  
+                    El Papa nos llama a construir fraternidad también en internet, promoviendo respeto y verdad.
+                </p>
+            </div>
+
+            <!-- TARJETA 3 -->
+            <div class="card">
+                <img src="img3.png" alt="Imagen Comunicación Papa Francisco">
+                <h3>Mensaje para la Jornada Mundial de las Comunicaciones</h3>
+                <p>
+                    “La comunicación debe tender a unir, no a dividir”.  
+                    El Papa Francisco insiste en que toda publicación debe estar marcada por la caridad y la 
+                    responsabilidad cristiana.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        Proyecto Escolar · Área de Educación Religiosa · 2025
+    </footer>
+
+    <script>
+        /* Fade-in inicial */
+        window.onload = () => {
+            document.body.style.opacity = "1";
+        };
+
+        /* Navbar en scroll */
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementById("navbar");
+            if (window.scrollY > 50) nav.classList.add("scrolled");
+            else nav.classList.remove("scrolled");
+        });
+
+        /* Animación al aparecer */
+        const section = document.getElementById("contentSection");
+        const obs = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting)
+                    section.classList.add("visible");
+            },
+            { threshold: 0.3 }
+        );
+        obs.observe(section);
+
+        /* Transición entre páginas */
+        const links = document.querySelectorAll(".link");
+        const transition = document.getElementById("transition");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const href = link.getAttribute("href");
+
+                transition.classList.add("active");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
+            });
+        });
+    </script>
+
+</body>
+</html>
