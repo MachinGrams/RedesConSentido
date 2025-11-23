@@ -6,6 +6,7 @@
     <title>Redes con Sentido — Evangelizando en el Mundo Digital</title>
 
     <style>
+        /* ----------- ESTILOS GENERALES ----------- */
         body {
             margin: 0;
             font-family: "Segoe UI", sans-serif;
@@ -21,7 +22,7 @@
             text-decoration: none;
         }
 
-        /* -------- NAVBAR -------- */
+        /* ----------- NAVBAR ----------- */
         .navbar {
             position: fixed;
             top: 0;
@@ -47,21 +48,25 @@
             color: #d9b657;
         }
 
+        /* 🔥 NUEVO → movemos el menú más a la izquierda */
+        nav {
+            margin-right: 140px;
+        }
+
         nav a {
             margin-left: 18px;
             font-weight: 500;
             transition: 0.3s;
-            font-size: 15px; /* ⭐ hace que Créditos se vea bien */
         }
 
         nav a:hover {
             color: #d9b657;
         }
 
-        /* -------- HERO -------- */
+        /* ----------- HERO (BANNER) ----------- */
         .hero {
             position: relative;
-            height: 100vh;
+            height: 70vh; /* 🔥 Imagen más pequeña */
             overflow: hidden;
         }
 
@@ -70,7 +75,7 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.55);
-            transform: scale(1.1);
+            transform: scale(1.05);
             transition: transform 0.8s ease-out;
         }
 
@@ -85,7 +90,7 @@
         }
 
         .hero-text h1 {
-            font-size: 55px;
+            font-size: 50px;
             margin: 0;
             color: #f6d97e;
             text-shadow: 0 0 12px #000;
@@ -113,12 +118,10 @@
             transform: scale(1.05);
         }
 
-        /* -------- INTRO (YA ARREGLADO) -------- */
+        /* ----------- INTRO ----------- */
         .intro {
-            padding: 80px 0;
-            max-width: 900px;
-            margin: 0 auto;         /* bloque centrado */
-            text-align: left;       /* texto recto */
+            padding: 70px 15%;
+            text-align: center;
             opacity: 0;
             transform: translateY(30px);
             transition: 1s ease;
@@ -132,26 +135,24 @@
         .intro h2 {
             color: #f6d97e;
             font-size: 32px;
-            text-align: center;     /* título centrado */
         }
 
         .intro p {
             font-size: 18px;
             line-height: 1.7;
             color: #d8d8d8;
-            text-align: left;       /* línea recta */
         }
 
-        /* -------- FOOTER -------- */
+        /* ----------- FOOTER ----------- */
         .footer {
             text-align: center;
             padding: 25px;
             border-top: 1px solid #c9a94e50;
-            margin-top: 50px;
+            margin-top: 40px;
             color: #ffffffa9;
         }
 
-        /* -------- ANIMACIONES -------- */
+        /* ----------- ANIMACIONES ----------- */
         @keyframes fadeUp {
             from {
                 transform: translate(-50%, -55%);
@@ -227,6 +228,7 @@
         </p>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         Proyecto Escolar · Área de Educación Religiosa · 2025
     </footer>
@@ -237,14 +239,14 @@
             document.body.style.opacity = "1";
         };
 
-        /* ---- Navbar scroll ---- */
+        /* ---- Navbar cambia al hacer scroll ---- */
         window.addEventListener("scroll", () => {
             const nav = document.getElementById("navbar");
             if (window.scrollY > 50) nav.classList.add("scrolled");
             else nav.classList.remove("scrolled");
         });
 
-        /* ---- Animación intro ---- */
+        /* ---- Fade-in en scroll ---- */
         const intro = document.getElementById("intro");
         const observer = new IntersectionObserver(
             entries => {
@@ -254,15 +256,15 @@
         );
         observer.observe(intro);
 
-        /* ---- Parallax ---- */
+        /* ---- Parallax del banner ---- */
         document.addEventListener("mousemove", (e) => {
             const img = document.getElementById("heroImg");
             let moveX = (e.clientX - window.innerWidth / 2) * 0.003;
             let moveY = (e.clientY - window.innerHeight / 2) * 0.003;
-            img.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+            img.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
         });
 
-        /* ---- Transiciones ---- */
+        /* ---- Transición entre páginas ---- */
         const links = document.querySelectorAll(".link");
         const transition = document.getElementById("transition");
 
