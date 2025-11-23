@@ -1,226 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conectados por la Fe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectados por la fe</title>
 
     <style>
         body {
             margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background-color: #0d1224;
-            color: #ffffff;
-            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background: #fafafa;
             opacity: 0;
-            transition: opacity 0.8s ease-in-out;
+            animation: fadeInPage 0.8s ease forwards;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        /* NAVBAR (igual que index) */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(5, 8, 25, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 50;
-            border-bottom: 1px solid #c9a94e50;
-            transition: background 0.4s;
-        }
-
-        .navbar.scrolled {
-            background: rgba(5, 8, 25, 0.92);
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #d9b657;
+        header {
+            background: #3c5a9a;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
         nav {
-            margin-right: 110px; /* igual al index actual */
+            background: #2f3f6b;
+            padding: 10px;
+            text-align: center;
         }
 
         nav a {
-            margin-left: 18px;
-            font-weight: 500;
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #d9b657;
+            letter-spacing: 1px;
         }
 
-        /* CONTENIDO EDITORIAL */
-        .editorial-container {
-            margin-top: 120px;
-            padding: 40px 10%;
-            display: flex;
-            align-items: center;
-            gap: 40px;
+        .contenedor {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
             opacity: 0;
-            transform: translateY(30px);
-            transition: 1s ease;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
         }
 
-        .editorial-container.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .editorial-img {
-            width: 40%;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #0009;
+        .titulo {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .editorial-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
         }
 
         .editorial-text {
-            width: 60%;
+            flex: 1 1 55%;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
-        .editorial-text h1 {
-            color: #f6d97e;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .editorial-text p {
-            font-size: 19px;
-            line-height: 1.7;
-            color: #e0e0e0;
-        }
-
-        .footer {
+        .editorial-img {
+            flex: 1 1 40%;
             text-align: center;
-            padding: 25px;
-            border-top: 1px solid #c9a94e50;
-            margin-top: 40px;
-            color: #ffffffa9;
-        }
-
-        /* TRANSICIÓN ENTRE PÁGINAS */
-        .page-transition {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: #000;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.6s ease-out;
-            z-index: 1000;
+            transform: translateX(30px);
+            animation: fadeImg 1s ease forwards 0.4s;
         }
 
-        .page-transition.active {
-            opacity: 1;
-            pointer-events: all;
+        @keyframes fadeImg {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .editorial-img img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Mensaje del Papa */
+        .mensaje-papa {
+            background: #f7f1da;
+            border-left: 5px solid #c5a043;
+            padding: 18px 20px;
+            margin-top: 35px;
+            border-radius: 4px;
+            font-family: 'Georgia', serif;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.8s;
+        }
+
+        .mensaje-papa h3 {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            color: #8a6a25;
+        }
+
+        .mensaje-papa .cita {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .mensaje-papa .autor {
+            text-align: right;
+            font-weight: bold;
+            color: #6b5321;
         }
     </style>
 </head>
 
 <body>
-    <div class="page-transition" id="transition"></div>
 
-    <!-- NAVBAR -->
-    <header class="navbar" id="navbar">
-        <h2 class="logo">Conectados por la Fe</h2>
+<header>
+    <h1>Conectados por la fe</h1>
+</header>
 
-        <nav>
-            <a href="index.html" class="link">Inicio</a>
-            <a href="editorial.html" class="link">Editorial</a>
-            <a href="articulo.html" class="link">Artículo Principal</a>
-            <a href="opiniones.html" class="link">Opiniones</a>
-            <a href="magisterio.html" class="link">Magisterio</a>
-            <a href="recomendaciones.html" class="link">Recomendaciones</a>
-            <a href="creativos.html" class="link">Creativos</a>
-            <a href="creditos.html" class="link">Créditos</a>
-        </nav>
-    </header>
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="editorial.html">Editorial</a>
+    <a href="articulo.html">Artículo principal</a>
+    <a href="creditos.html">Créditos</a>
+</nav>
 
-    <!-- CONTENIDO -->
-    <section class="editorial-container" id="editorialSection">
-        <img src="asd.png" class="editorial-img">
+<div class="contenedor">
 
+    <h2 class="titulo">Editorial</h2>
+
+    <div class="editorial-section">
+        
         <div class="editorial-text">
-            <h1>Editorial</h1>
             <p>
-                Vivimos en una época donde cada mensaje, cada publicación y cada clic tienen el poder de influir 
-                profundamente en quienes nos rodean. Las redes sociales se han convertido en un espacio inmenso, 
-                lleno de voces diversas, pero también lleno de silencios que necesitan ser iluminados por la verdad, 
-                el amor y la esperanza.
+                En el mundo actual, la conexión digital es una parte importantísima de nuestras vidas. 
+                Sin embargo, en medio de tantas pantallas, mensajes y notificaciones, es fácil perder 
+                de vista lo más esencial: la conexión humana y espiritual.
             </p>
 
             <p>
-                Este boletín nace con el deseo de recordar que, como cristianos, somos llamados a ser luz también 
-                en el mundo digital. No se trata solo de compartir contenido, sino de compartir vida, fe y valores 
-                que edifiquen. Cada joven, cada creyente, está invitado a anunciar el Evangelio incluso detrás de 
-                una pantalla, usando sus redes con responsabilidad, respeto y sentido.
+                Este boletín nace con el propósito de recordarnos que la fe también se expresa en nuestras 
+                redes sociales, en nuestras palabras y en la forma en que tratamos a los demás. Queremos 
+                motivar a cada estudiante a reflexionar sobre el verdadero sentido de comunicarnos: 
+                inspirar, animar y construir un espacio más humano y cristiano.
             </p>
 
             <p>
-                Que este espacio sea una inspiración para reconocer que Dios también puede actuar en lo virtual, 
-                y que nuestras publicaciones pueden ser semillas de paz, unidad y esperanza.  
-                ¡Evangelicemos con creatividad y alegría!
+                Así, este proyecto no solo es informativo, sino también un llamado a usar nuestras 
+                plataformas con amor, respeto y propósito. Que cada publicación sea un reflejo de lo que 
+                llevamos en el corazón.
             </p>
         </div>
-    </section>
 
-    <footer class="footer">
-        Proyecto Escolar · Área de Educación Religiosa · 2025
-    </footer>
+        <div class="editorial-img">
+            <img src="asd.png" alt="Imagen editorial">
+        </div>
+    </div>
 
-    <script>
-        /* Fade-in inicial */
-        window.onload = () => {
-            document.body.style.opacity = "1";
-        };
+    <!-- Mensaje del Papa -->
+    <div class="mensaje-papa">
+        <h3>📜 Mensaje del Papa Francisco</h3>
+        <p class="cita">“Si pasamos más tiempo con el móvil que con la gente, algo no funciona.”</p>
+        <p class="autor">— Papa Francisco</p>
+    </div>
 
-        /* Navbar en scroll */
-        window.addEventListener("scroll", () => {
-            const nav = document.getElementById("navbar");
-            if (window.scrollY > 50) nav.classList.add("scrolled");
-            else nav.classList.remove("scrolled");
+</div>
+
+<script>
+    // Animación suave al hacer scroll
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.fade').forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                el.classList.add('visible');
+            }
         });
-
-        /* Animación al aparecer */
-        const editorial = document.getElementById("editorialSection");
-        const obs = new IntersectionObserver(
-            entries => {
-                if (entries[0].isIntersecting)
-                    editorial.classList.add("visible");
-            },
-            { threshold: 0.3 }
-        );
-        obs.observe(editorial);
-
-        /* Transición entre páginas */
-        const links = document.querySelectorAll(".link");
-        const transition = document.getElementById("transition");
-
-        links.forEach(link => {
-            link.addEventListener("click", e => {
-                e.preventDefault();
-                const href = link.getAttribute("href");
-
-                transition.classList.add("active");
-
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 600);
-            });
-        });
-    </script>
+    });
+</script>
 
 </body>
 </html>
