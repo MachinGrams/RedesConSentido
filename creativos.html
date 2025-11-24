@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creativos – Conectados por la Fe</title>
+    <title>Créditos | Conectados por la Fe</title>
 
     <style>
         body {
@@ -16,9 +16,12 @@
             transition: opacity 0.8s ease-in-out;
         }
 
-        a { color: inherit; text-decoration: none; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-        /* NAVBAR (idéntico al de las otras páginas) */
+        /* NAVBAR (igual en toda tu web) */
         .navbar {
             position: fixed;
             top: 0;
@@ -44,95 +47,52 @@
             color: #d9b657;
         }
 
-        nav { margin-right: 110px; }
         nav a {
             margin-left: 18px;
             font-weight: 500;
             transition: 0.3s;
         }
-        nav a:hover { color: #d9b657; }
 
-        /* CONTENEDOR GENERAL */
-        .section-container {
+        nav a:hover {
+            color: #d9b657;
+        }
+
+        /* CONTENIDO */
+        .content {
             margin-top: 140px;
-            padding: 40px 10%;
+            padding: 40px 12%;
             opacity: 0;
             transform: translateY(30px);
             transition: 1s ease;
         }
-        .section-container.visible {
+
+        .content.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        h1 {
+        h1, h2 {
             color: #f6d97e;
-            font-size: 38px;
-            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 19px;
-            line-height: 1.7;
-            color: #e0e0e0;
+        ul {
+            line-height: 1.8;
+            font-size: 18px;
         }
 
-        /* TARJETAS */
-        .cards {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: #151a33;
-            border: 1px solid #c9a94e40;
+        .big-image {
+            width: 100%;
             border-radius: 12px;
-            padding: 20px;
-            width: 33%;
-            text-align: center;
-            box-shadow: 0 0 12px #0006;
-            transition: 0.3s;
+            margin-top: 40px;
+            box-shadow: 0 0 15px #0009;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px #0008;
-        }
-
-        .card img {
-            width: 85%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        /* BOTÓN FORMULARIO */
-        .form-box {
-            margin-top: 50px;
-            text-align: center;
-            padding: 25px;
-            border: 1px solid #c9a94e40;
-            border-radius: 10px;
-            background: #151a33;
-        }
-
-        .form-box a {
-            display: inline-block;
-            background: #d9b657;
-            padding: 12px 25px;
-            color: #000;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        /* FOOTER */
         .footer {
             text-align: center;
             padding: 25px;
             border-top: 1px solid #c9a94e50;
+            margin-top: 40px;
             color: #ffffffa9;
-            margin-top: 60px;
         }
 
         /* TRANSICIÓN ENTRE PÁGINAS */
@@ -162,6 +122,7 @@
     <!-- NAVBAR -->
     <header class="navbar" id="navbar">
         <h2 class="logo">Conectados por la Fe</h2>
+
         <nav>
             <a href="index.html" class="link">Inicio</a>
             <a href="editorial.html" class="link">Editorial</a>
@@ -174,54 +135,39 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN 7: CREATIVOS -->
-    <section class="section-container" id="creativos">
-        <h1>Creativos</h1>
-        <p>
-            Aquí presentamos una mirada visual que busca transmitir lo que significa vivir la fe en el mundo digital.
-            Cada imagen simboliza un aspecto esencial de nuestro llamado como cristianos conectados.
+    <!-- CONTENIDO -->
+    <section class="content" id="contentSection">
+        <h1>Créditos</h1>
+
+        <h2>Mensaje Final</h2>
+        <p style="font-size: 19px; line-height: 1.8;">
+            <i>"Señor Jesús, ayúdanos a usar nuestras redes con sabiduría y amor, 
+            para ser luz en el mundo digital."</i>
         </p>
 
-        <div class="cards">
-            <div class="card">
-                <img src="imnn1.png">
-                <p><strong>La Palabra en lo digital:</strong> Recordar que cada publicación puede ser un acto de evangelización.</p>
-            </div>
+        <h2>Autores del Proyecto</h2>
+        <ul>
+            <li>Joshua Santos</li>
+            <li>Stephano Zavala</li>
+            <li>Zaid Félix</li>
+            <li>Adriano Chero</li>
+            <li>Mateo Leon</li>
+        </ul>
 
-            <div class="card">
-                <img src="imnn2.png">
-                <p><strong>Comunidad auténtica:</strong> Relacionarnos con otros desde la verdad, el respeto y la fraternidad.</p>
-            </div>
+        <h2>Docente Guía</h2>
+        <p>Profesora Diana L.</p>
 
-            <div class="card">
-                <img src="imnn3.png">
-                <p><strong>Caridad en línea:</strong> Crear espacios donde reine el amor, la paz y el apoyo mutuo.</p>
-            </div>
-        </div>
+        <h2>Bibliografía / Fuente de Información</h2>
+        <ul>
+            <li>Documentos del Magisterio de la Iglesia</li>
+            <li>La Biblia</li>
+            <li>Mensajes del Papa Francisco</li>
+            <li>Christus Vivit</li>
+            <li>Fratelli Tutti</li>
+            <li>Mensajes para la Jornada Mundial de las Comunicaciones Sociales</li>
+        </ul>
 
-        <!-- FORMULARIO -->
-        <div class="form-box">
-            <h2 style="color:#f6d97e;">Danos tu opinión</h2>
-            <p>Queremos conocer tu experiencia, tus ideas y tu reflexión final sobre este proyecto.</p>
-
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSedZG_iwdV_lFYohAy_qLSGbTRI5U-NMLgeWMJzO_M9kfQNzw/viewform?usp=dialog" target="_blank">
-                Ir al formulario
-            </a>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 8–9 -->
-    <section class="section-container" id="final">
-        <h1>Conclusión Final</h1>
-        <p>
-            En un mundo cada vez más digital, los cristianos estamos llamados a ser luz incluso detrás de una pantalla.
-            Que todo lo que compartamos sea un reflejo del amor de Dios.
-        </p>
-
-        <p>
-            Gracias por ser parte de este proyecto y por aportar con tus ideas. Que este espacio siga inspirando una cultura
-            digital de fraternidad, respeto y verdad.
-        </p>
+        <img src="as.png" class="big-image">
     </section>
 
     <footer class="footer">
@@ -230,7 +176,9 @@
 
     <script>
         /* Fade-in inicial */
-        window.onload = () => { document.body.style.opacity = "1"; };
+        window.onload = () => {
+            document.body.style.opacity = "1";
+        };
 
         /* Navbar en scroll */
         window.addEventListener("scroll", () => {
@@ -239,13 +187,16 @@
             else nav.classList.remove("scrolled");
         });
 
-        /* Aparición animada */
-        const sections = document.querySelectorAll(".section-container");
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-        }, { threshold: 0.3 });
-
-        sections.forEach(s => obs.observe(s));
+        /* Animación al aparecer */
+        const content = document.getElementById("contentSection");
+        const obs = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting)
+                    content.classList.add("visible");
+            },
+            { threshold: 0.3 }
+        );
+        obs.observe(content);
 
         /* Transición entre páginas */
         const links = document.querySelectorAll(".link");
@@ -254,8 +205,13 @@
         links.forEach(link => {
             link.addEventListener("click", e => {
                 e.preventDefault();
+                const href = link.getAttribute("href");
+
                 transition.classList.add("active");
-                setTimeout(() => { window.location.href = link.href; }, 600);
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 600);
             });
         });
     </script>
