@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reflexión Final</title>
+    <title>Cierre y Créditos</title>
 
     <style>
         body {
@@ -62,37 +62,46 @@
         }
 
         /* CONTENIDO */
-        .content-section {
-            margin-top: 150px;
+        .creditos-container {
+            margin-top: 120px;
             padding: 40px 10%;
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: 1s ease;
         }
 
-        .content-section.visible {
+        .creditos-container.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        h1 {
+        .creditos-container h1 {
+            font-size: 40px;
             color: #f6d97e;
-            font-size: 38px;
+        }
+
+        .creditos-container p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #e0e0e0;
             margin-bottom: 20px;
         }
 
-        p {
+        .creditos-list {
+            margin-top: 20px;
             font-size: 19px;
-            line-height: 1.8;
-            color: #e0e0e0;
-            margin-bottom: 22px;
+            color: #ffffffd0;
+            line-height: 1.7;
         }
 
-        .big-image {
+        /* Imagen final */
+        .imagen-final {
+            margin-top: 40px;
             width: 100%;
-            margin-top: 30px;
+            max-width: 550px;
             border-radius: 12px;
-            box-shadow: 0 0 15px #000c;
+            box-shadow: 0 0 15px #0008;
+            display: block;
         }
 
         .footer {
@@ -144,31 +153,39 @@
     </header>
 
     <!-- CONTENIDO -->
-    <section class="content-section" id="content">
-        <h1>Reflexión Final y Compromiso Cristiano</h1>
+    <section class="creditos-container" id="creditosSection">
+
+        <h1>Cierre y Créditos</h1>
 
         <p>
-            Las redes sociales son un espacio donde podemos construir o destruir. Cada palabra, cada imagen y cada mensaje deja una huella.
-            Por eso, como cristianos, estamos llamados a iluminar incluso estos ambientes digitales con la verdad, la esperanza y la caridad.
+            A lo largo de este proyecto hemos buscado mostrar que las redes sociales
+            pueden ser un espacio de encuentro, verdad y fraternidad cuando se usan
+            con responsabilidad y amor cristiano.
         </p>
 
         <p>
-            Recordemos lo que nos invita la Iglesia en documentos como <i>Christus Vivit</i> y <i>Fratelli Tutti</i>: ser puentes, no muros;
-            acercar, no dividir; sanar, no herir. La comunicación es un don, pero también una responsabilidad.
+            Que este boletín nos anime a compartir la luz del Evangelio también en el
+            mundo digital, siendo signos de esperanza para quienes nos leen y nos escuchan.
         </p>
 
-        <p>
-            Usar bien las redes significa reconocer la dignidad del otro, evitar la agresión, buscar el diálogo y promover un mensaje que edifique.
-            No se trata solo de evitar el mal, sino de comprometerse activamente con el bien.
-        </p>
+        <p><i>“Señor Jesús, ayúdanos a usar nuestras redes con sabiduría y amor,
+        para ser luz en el mundo digital.”</i></p>
 
-        <p>
-            Tú puedes ser un influencer del Evangelio: alguien que comparte luz, que anima, que respeta, que escucha, que inspira, que construye.
-            No hace falta un millón de seguidores para hacerlo: basta un corazón dispuesto.
-        </p>
+        <h2 style="color:#f6d97e; margin-top:40px;">Créditos</h2>
 
-        <!-- IMAGEN GRANDE -->
-        <img src="asddd.png" class="big-image">
+        <div class="creditos-list">
+            <p><b>Autores del proyecto:</b></p>
+            <p>• Joshua Santos</p>
+            <p>• Stephano Zavala</p>
+            <p>• Zaid Félix</p>
+            <p>• Adriano Chero</p>
+            <p>• Mateo Leon</p>
+
+            <p style="margin-top:20px;"><b>Fuente de información:</b> Documentos del Magisterio, Biblia y mensajes del Papa.</p>
+        </div>
+
+        <!-- Imagen final -->
+        <img src="as.png" class="imagen-final">
     </section>
 
     <footer class="footer">
@@ -176,30 +193,26 @@
     </footer>
 
     <script>
-        /* Fade-in inicial */
         window.onload = () => {
             document.body.style.opacity = "1";
         };
 
-        /* Navbar scroll */
         window.addEventListener("scroll", () => {
             const nav = document.getElementById("navbar");
             if (window.scrollY > 50) nav.classList.add("scrolled");
             else nav.classList.remove("scrolled");
         });
 
-        /* Animación al aparecer */
-        const content = document.getElementById("content");
+        const section = document.getElementById("creditosSection");
         const obs = new IntersectionObserver(
             entries => {
                 if (entries[0].isIntersecting)
-                    content.classList.add("visible");
+                    section.classList.add("visible");
             },
             { threshold: 0.3 }
         );
-        obs.observe(content);
+        obs.observe(section);
 
-        /* Transición entre páginas */
         const links = document.querySelectorAll(".link");
         const transition = document.getElementById("transition");
 
@@ -209,12 +222,12 @@
                 const href = link.getAttribute("href");
 
                 transition.classList.add("active");
-
                 setTimeout(() => {
                     window.location.href = href;
                 }, 600);
             });
         });
     </script>
+
 </body>
 </html>
